@@ -1,0 +1,82 @@
+// Copyright (c) 2017, 'rinukkusu'. All rights reserved. Use of this source code
+// is governed by a BSD-style license that can be found in the LICENSE file.
+part of darksky_weather;
+
+/// English is the default language
+enum Language {
+  Arabic,
+  Azerbaijani,
+  Belarusian,
+  Bulgarian,
+  Bosnian,
+  Catalan,
+  Czech,
+  German,
+  Greek,
+  English,
+  Spanish,
+  Estonian,
+  French,
+  Croatian,
+  Hungarian,
+  Indonesian,
+  Italian,
+  Icelandic,
+  Cornish,
+  NorwegianBokmal,
+  Dutch,
+  Polish,
+  Portuguese,
+  Russian,
+  Slovak,
+  Slovenian,
+  Serbian,
+  Swedish,
+  Tetum,
+  Turkish,
+  Ukranian,
+  IgpayAtinlay,
+  ChineseSimplified,
+  ChineseTraditional
+}
+
+class LanguageHelper {
+  static String get(Language l) => _languages[l];
+
+  static const Map<Language, String> _languages = const {
+    Language.Arabic: 'ar',
+    Language.Azerbaijani: 'az',
+    Language.Belarusian: 'be',
+    Language.Bosnian: 'bs',
+    Language.Bulgarian: 'bg',
+    Language.Catalan: 'ca',
+    Language.ChineseSimplified: 'zh',
+    Language.ChineseTraditional: 'zh-tw',
+    Language.Cornish: 'kw',
+    Language.Croatian: 'hr',
+    Language.Czech: 'cs',
+    Language.Dutch: 'nl',
+    Language.English: 'en',
+    Language.Estonian: 'et',
+    Language.French: 'fr',
+    Language.German: 'de',
+    Language.Greek: 'el',
+    Language.Hungarian: 'hu',
+    Language.Icelandic: 'is',
+    Language.IgpayAtinlay: 'x-pig-latin',
+    Language.Indonesian: 'id',
+    Language.Italian: 'it',
+    Language.NorwegianBokmal: 'nb',
+    Language.Polish: 'pl',
+    Language.Portuguese: 'pt',
+    Language.Russian: 'ru',
+    Language.Serbian: 'sr',
+    Language.Slovak: 'sk',
+    Language.Slovenian: 'sl',
+    Language.Spanish: 'es',
+    Language.Swedish: 'sv',
+    Language.Tetum: 'tet',
+    Language.Turkish: 'tr',
+    Language.Ukranian: 'uk',
+  };
+}

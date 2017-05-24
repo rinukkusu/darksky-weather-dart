@@ -17,3 +17,6 @@ part 'src/darksky_weather_browser.dart';
 part 'src/models/forecast.dart';
 part 'src/models/datapoint.dart';
 part 'src/models/datablock.dart';
+part 'src/enums/exclude_flags.dart';
+part 'src/enums/language_enum.dart';
+part 'src/enums/units_enum.dart';
