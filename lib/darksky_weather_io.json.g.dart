@@ -66,7 +66,7 @@ abstract class ForecastMapper {
 
 // **************************************************************************
 // Generator: JsonGenerator
-// Target: class DataPointBase
+// Target: abstract class DataPointBase
 // **************************************************************************
 
 /// Mapper for DataPointBase
@@ -140,7 +140,21 @@ abstract class CurrentlyDataPointMapper {
     return (new _owl_json.MapBuilder(ordered: false)
           ..put('nearestStormBearing', object.nearestStormBearing)
           ..put('nearestStormDistance', object.nearestStormDistance)
-          ..put('temperature', object.temperature))
+          ..put('temperature', object.temperature)
+          ..put('cloudCover', object.cloudCover)
+          ..put('dewPoint', object.dewPoint)
+          ..put('humidity', object.humidity)
+          ..put('icon', object.icon)
+          ..put('ozone', object.ozone)
+          ..put('precipIntensity', object.precipIntensity)
+          ..put('precipProbability', object.precipProbability)
+          ..put('precipType', object.precipType)
+          ..put('pressure', object.pressure)
+          ..put('summary', object.summary)
+          ..put('time', object.time)
+          ..put('visibility', object.visibility)
+          ..put('windBearing', object.windBearing)
+          ..put('windSpeed', object.windSpeed))
         .toMap();
   }
 
@@ -151,6 +165,20 @@ abstract class CurrentlyDataPointMapper {
     object.nearestStormBearing = map['nearestStormBearing'];
     object.nearestStormDistance = map['nearestStormDistance'];
     object.temperature = map['temperature'];
+    object.cloudCover = map['cloudCover'];
+    object.dewPoint = map['dewPoint'];
+    object.humidity = map['humidity'];
+    object.icon = map['icon'];
+    object.ozone = map['ozone'];
+    object.precipIntensity = map['precipIntensity'];
+    object.precipProbability = map['precipProbability'];
+    object.precipType = map['precipType'];
+    object.pressure = map['pressure'];
+    object.summary = map['summary'];
+    object.time = map['time'];
+    object.visibility = map['visibility'];
+    object.windBearing = map['windBearing'];
+    object.windSpeed = map['windSpeed'];
     return object;
   }
 
@@ -179,7 +207,21 @@ abstract class MinutelyDataPointMapper {
   static Map<String, dynamic> map(MinutelyDataPoint object) {
     if (object == null) return null;
     return (new _owl_json.MapBuilder(ordered: false)
-          ..put('apparentTemperature', object.apparentTemperature))
+          ..put('apparentTemperature', object.apparentTemperature)
+          ..put('cloudCover', object.cloudCover)
+          ..put('dewPoint', object.dewPoint)
+          ..put('humidity', object.humidity)
+          ..put('icon', object.icon)
+          ..put('ozone', object.ozone)
+          ..put('precipIntensity', object.precipIntensity)
+          ..put('precipProbability', object.precipProbability)
+          ..put('precipType', object.precipType)
+          ..put('pressure', object.pressure)
+          ..put('summary', object.summary)
+          ..put('time', object.time)
+          ..put('visibility', object.visibility)
+          ..put('windBearing', object.windBearing)
+          ..put('windSpeed', object.windSpeed))
         .toMap();
   }
 
@@ -188,6 +230,20 @@ abstract class MinutelyDataPointMapper {
     if (map == null) return null;
     final MinutelyDataPoint object = new MinutelyDataPoint();
     object.apparentTemperature = map['apparentTemperature'];
+    object.cloudCover = map['cloudCover'];
+    object.dewPoint = map['dewPoint'];
+    object.humidity = map['humidity'];
+    object.icon = map['icon'];
+    object.ozone = map['ozone'];
+    object.precipIntensity = map['precipIntensity'];
+    object.precipProbability = map['precipProbability'];
+    object.precipType = map['precipType'];
+    object.pressure = map['pressure'];
+    object.summary = map['summary'];
+    object.time = map['time'];
+    object.visibility = map['visibility'];
+    object.windBearing = map['windBearing'];
+    object.windSpeed = map['windSpeed'];
     return object;
   }
 
@@ -218,7 +274,21 @@ abstract class HourlyDataPointMapper {
     return (new _owl_json.MapBuilder(ordered: false)
           ..put('apparentTemperature', object.apparentTemperature)
           ..put('precipAccumulation', object.precipAccumulation)
-          ..put('temperature', object.temperature))
+          ..put('temperature', object.temperature)
+          ..put('cloudCover', object.cloudCover)
+          ..put('dewPoint', object.dewPoint)
+          ..put('humidity', object.humidity)
+          ..put('icon', object.icon)
+          ..put('ozone', object.ozone)
+          ..put('precipIntensity', object.precipIntensity)
+          ..put('precipProbability', object.precipProbability)
+          ..put('precipType', object.precipType)
+          ..put('pressure', object.pressure)
+          ..put('summary', object.summary)
+          ..put('time', object.time)
+          ..put('visibility', object.visibility)
+          ..put('windBearing', object.windBearing)
+          ..put('windSpeed', object.windSpeed))
         .toMap();
   }
 
@@ -229,6 +299,20 @@ abstract class HourlyDataPointMapper {
     object.apparentTemperature = map['apparentTemperature'];
     object.precipAccumulation = map['precipAccumulation'];
     object.temperature = map['temperature'];
+    object.cloudCover = map['cloudCover'];
+    object.dewPoint = map['dewPoint'];
+    object.humidity = map['humidity'];
+    object.icon = map['icon'];
+    object.ozone = map['ozone'];
+    object.precipIntensity = map['precipIntensity'];
+    object.precipProbability = map['precipProbability'];
+    object.precipType = map['precipType'];
+    object.pressure = map['pressure'];
+    object.summary = map['summary'];
+    object.time = map['time'];
+    object.visibility = map['visibility'];
+    object.windBearing = map['windBearing'];
+    object.windSpeed = map['windSpeed'];
     return object;
   }
 
@@ -271,7 +355,21 @@ abstract class DailyDataPointMapper {
           ..put('temperatureMax', object.temperatureMax)
           ..put('temperatureMaxTime', object.temperatureMaxTime)
           ..put('temperatureMin', object.temperatureMin)
-          ..put('temperatureMinTime', object.temperatureMinTime))
+          ..put('temperatureMinTime', object.temperatureMinTime)
+          ..put('cloudCover', object.cloudCover)
+          ..put('dewPoint', object.dewPoint)
+          ..put('humidity', object.humidity)
+          ..put('icon', object.icon)
+          ..put('ozone', object.ozone)
+          ..put('precipIntensity', object.precipIntensity)
+          ..put('precipProbability', object.precipProbability)
+          ..put('precipType', object.precipType)
+          ..put('pressure', object.pressure)
+          ..put('summary', object.summary)
+          ..put('time', object.time)
+          ..put('visibility', object.visibility)
+          ..put('windBearing', object.windBearing)
+          ..put('windSpeed', object.windSpeed))
         .toMap();
   }
 
@@ -294,6 +392,20 @@ abstract class DailyDataPointMapper {
     object.temperatureMaxTime = map['temperatureMaxTime'];
     object.temperatureMin = map['temperatureMin'];
     object.temperatureMinTime = map['temperatureMinTime'];
+    object.cloudCover = map['cloudCover'];
+    object.dewPoint = map['dewPoint'];
+    object.humidity = map['humidity'];
+    object.icon = map['icon'];
+    object.ozone = map['ozone'];
+    object.precipIntensity = map['precipIntensity'];
+    object.precipProbability = map['precipProbability'];
+    object.precipType = map['precipType'];
+    object.pressure = map['pressure'];
+    object.summary = map['summary'];
+    object.time = map['time'];
+    object.visibility = map['visibility'];
+    object.windBearing = map['windBearing'];
+    object.windSpeed = map['windSpeed'];
     return object;
   }
 
@@ -313,45 +425,6 @@ abstract class DailyDataPointMapper {
 
 // **************************************************************************
 // Generator: JsonGenerator
-// Target: class DataBlockBase
-// **************************************************************************
-
-/// Mapper for DataBlockBase
-abstract class DataBlockBaseMapper {
-  /// Converts an instance of DataBlockBase to Map.
-  static Map<String, dynamic> map(DataBlockBase object) {
-    if (object == null) return null;
-    return (new _owl_json.MapBuilder(ordered: false)
-          ..put('summary', object.summary)
-          ..put('icon', object.icon))
-        .toMap();
-  }
-
-  /// Converts a Map to an instance of DataBlockBase.
-  static DataBlockBase parse(Map<String, dynamic> map) {
-    if (map == null) return null;
-    final DataBlockBase object = new DataBlockBase();
-    object.summary = map['summary'];
-    object.icon = map['icon'];
-    return object;
-  }
-
-  /// Converts a JSON string to an instance of DataBlockBase.
-  static DataBlockBase fromJson(String json) {
-    if (json == null || json.isEmpty) return null;
-    final Map<String, dynamic> map = JSON.decoder.convert(json);
-    return parse(map);
-  }
-
-  /// Converts an instance of DataBlockBase to JSON string.
-  static String toJson(DataBlockBase object) {
-    if (object == null) return null;
-    return JSON.encoder.convert(map(object));
-  }
-}
-
-// **************************************************************************
-// Generator: JsonGenerator
 // Target: class MinutelyDataBlock
 // **************************************************************************
 
@@ -361,8 +434,9 @@ abstract class MinutelyDataBlockMapper {
   static Map<String, dynamic> map(MinutelyDataBlock object) {
     if (object == null) return null;
     return (new _owl_json.MapBuilder(ordered: false)
-          ..put(
-              'data', object.data?.map(MinutelyDataPointMapper.map)?.toList()))
+          ..put('data', object.data?.map(MinutelyDataPointMapper.map)?.toList())
+          ..put('icon', object.icon)
+          ..put('summary', object.summary))
         .toMap();
   }
 
@@ -374,6 +448,8 @@ abstract class MinutelyDataBlockMapper {
     object.data = (map['data'] as List<dynamic>)
         ?.map(MinutelyDataPointMapper.parse)
         ?.toList();
+    object.icon = map['icon'];
+    object.summary = map['summary'];
     return object;
   }
 
@@ -402,7 +478,9 @@ abstract class HourlyDataBlockMapper {
   static Map<String, dynamic> map(HourlyDataBlock object) {
     if (object == null) return null;
     return (new _owl_json.MapBuilder(ordered: false)
-          ..put('data', object.data?.map(HourlyDataPointMapper.map)?.toList()))
+          ..put('data', object.data?.map(HourlyDataPointMapper.map)?.toList())
+          ..put('icon', object.icon)
+          ..put('summary', object.summary))
         .toMap();
   }
 
@@ -414,6 +492,8 @@ abstract class HourlyDataBlockMapper {
     object.data = (map['data'] as List<dynamic>)
         ?.map(HourlyDataPointMapper.parse)
         ?.toList();
+    object.icon = map['icon'];
+    object.summary = map['summary'];
     return object;
   }
 
@@ -442,7 +522,9 @@ abstract class DailyDataBlockMapper {
   static Map<String, dynamic> map(DailyDataBlock object) {
     if (object == null) return null;
     return (new _owl_json.MapBuilder(ordered: false)
-          ..put('data', object.data?.map(DailyDataPointMapper.map)?.toList()))
+          ..put('data', object.data?.map(DailyDataPointMapper.map)?.toList())
+          ..put('icon', object.icon)
+          ..put('summary', object.summary))
         .toMap();
   }
 
@@ -454,6 +536,8 @@ abstract class DailyDataBlockMapper {
     object.data = (map['data'] as List<dynamic>)
         ?.map(DailyDataPointMapper.parse)
         ?.toList();
+    object.icon = map['icon'];
+    object.summary = map['summary'];
     return object;
   }
 

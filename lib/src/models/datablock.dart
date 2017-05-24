@@ -2,8 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 part of darksky_weather;
 
-@JsonClass()
-class DataBlockBase {
+abstract class DataBlockBase {
   /// [optional] A human-readable summary of this data block.
   String summary;
 
@@ -19,12 +18,23 @@ class DataBlockBase {
  * hour.
  */
 @JsonClass() 
-class MinutelyDataBlock {
+class MinutelyDataBlock implements DataBlockBase {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
    */
   List<MinutelyDataPoint> data;
+
+  /**
+   * [optional] A machine-readable text summary of this data block. (May take 
+   * on the same values as the icon property of data points.)
+   */
+  @override
+  String icon;
+
+  /// [optional] A human-readable summary of this data block.
+  @override
+  String summary;
 }
 
 /**
@@ -32,12 +42,23 @@ class MinutelyDataBlock {
  * days.
  */
 @JsonClass() 
-class HourlyDataBlock {
+class HourlyDataBlock implements DataBlockBase  {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
    */
   List<HourlyDataPoint> data;
+
+  /**
+   * [optional] A machine-readable text summary of this data block. (May take 
+   * on the same values as the icon property of data points.)
+   */
+  @override
+  String icon;
+
+  /// [optional] A human-readable summary of this data block.
+  @override
+  String summary;
 }
 
 
@@ -45,10 +66,21 @@ class HourlyDataBlock {
  * A data block containing the weather conditions day-by-day for the next week.
  */
 @JsonClass() 
-class DailyDataBlock {
+class DailyDataBlock implements DataBlockBase  {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
    */
   List<DailyDataPoint> data;
+
+  /**
+   * [optional] A machine-readable text summary of this data block. (May take 
+   * on the same values as the icon property of data points.)
+   */
+  @override
+  String icon;
+
+  /// [optional] A human-readable summary of this data block.
+  @override
+  String summary;
 }
