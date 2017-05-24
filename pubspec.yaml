@@ -8,9 +8,9 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 
 dependencies:
-  owl: 0.2.1
-  http: any
+  owl: '>=0.2.1 <0.3.0'
+  http: '>=0.11.3+13 <0.12.0'
 
 dev_dependencies:
   test: '>=0.12.0 <0.13.0'
-  owl_codegen: 0.2.1
+  owl_codegen: '>=0.2.1 <0.3.0'
