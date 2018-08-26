@@ -2,7 +2,6 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 part of darksky_weather;
 
-@JsonClass()
 abstract class DataPointBase {
   /**
    * [optional] The percentage of sky occluded by clouds, between 0 and 1,
@@ -97,8 +96,8 @@ abstract class DataPointBase {
  * A data point containing the current weather conditions at the requested 
  * location.
  */
-@JsonClass()
-class CurrentlyDataPoint implements DataPointBase {
+@JsonSerializable()
+class CurrentlyDataPoint extends DataPointBase {
   /**
    * [optional] The approximate direction of the nearest storm in degrees, 
    * with true north at 0° and progressing clockwise. (If nearestStormDistance 
@@ -116,228 +115,32 @@ class CurrentlyDataPoint implements DataPointBase {
   /// [optional] The air temperature in degrees Fahrenheit.
   double temperature;
 
-  /**
-   * [optional] The percentage of sky occluded by clouds, between 0 and 1,
-   * inclusive.
-   */
-  @override
-  double cloudCover;
-
-  /// [optional] The dew point in degrees Fahrenheit.
-  @override
-  double dewPoint;
-
-  /// [optional] The relative humidity, between 0 and 1, inclusive.
-  double humidity;
-
-  /**
-   * [optional] A machine-readable text summary of this data point, suitable 
-   * for selecting an icon for display. If defined, this property will have one 
-   * of the following values: 
-   * 
-   *     clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, 
-   *     partly-cloudy-day, or partly-cloudy-night. 
-   * 
-   * Developers should ensure that a sensible default is defined, as 
-   * additional values, such as hail, thunderstorm, or tornado, may be defined 
-   * in the future.
-   */
-  @override
-  String icon;
-
-  /**
-   * [optional] The columnar density of total atmospheric ozone at the given
-   * time in Dobson units.
-   */
-  @override
-  double ozone;
-
-  /**
-   * [optional] The intensity (in inches of liquid water per hour) of 
-   * precipitation occurring at the given time. This value is conditional on 
-   * probability (that is, assuming any precipitation occurs at all) for 
-   * minutely data points, and unconditional otherwise.
-   */
-  @override
-  double precipIntensity;
-
-  /**
-   * [optional] The probability of precipitation occurring, between 0 and 1, 
-   * inclusive.
-   */
-  @override
-  double precipProbability;
-
-  /**
-   * [optional] The type of precipitation occurring at the given time. If 
-   * defined, this property will have one of the following values: 
-   * 
-   *     "rain", "snow", or "sleet" (which refers to each of freezing rain, 
-   *     ice pellets, and “wintery mix”). 
-   * 
-   * (If precipIntensity is zero, then this property will not be defined.)
-   */
-  @override
-  String precipType;
-
-  /// [optional] The sea-level air pressure in millibars.
-  @override
-  double pressure;
-
-  /**
-   * [optional] A human-readable text summary of this data point. (This property 
-   * has millions of possible values, so don’t use it for automated purposes: 
-   * use the icon property, instead!)
-   */
-  @override
-  String summary;
-
-  /**
-   * [required] The UNIX time at which this data point begins. minutely data 
-   * point are always aligned to the top of the minute, hourly data point 
-   * objects to the top of the hour, and daily data point objects to midnight 
-   * of the day, all according to the local time zone.
-   */
-  @override
-  int time;
-
-  /// [optional] The average visibility in miles, capped at 10 miles.
-  @override
-  double visibility;
-
-  /**
-   * [optional] The direction that the wind is coming from in degrees, with 
-   * true north at 0° and progressing clockwise. (If windSpeed is zero, then 
-   * this value will not be defined.)
-   */
-  @override
-  double windBearing;
-
-  /// [optional] The wind speed in miles per hour.
-  @override
-  double windSpeed;
+  CurrentlyDataPoint();
+  factory CurrentlyDataPoint.fromJson(Map<String, dynamic> json) => _$CurrentlyDataPointFromJson(json);
 }
 
 /**
  * A data point containing the weather conditions minute-by-minute for the next 
  * hour.
  */
-@JsonClass()
-class MinutelyDataPoint implements DataPointBase {
+@JsonSerializable()
+class MinutelyDataPoint extends DataPointBase {
   /**
    * [optional] The apparent (or “feels like”) temperature in degrees 
    * Fahrenheit.
    */
   double apparentTemperature;
 
-  /**
-   * [optional] The percentage of sky occluded by clouds, between 0 and 1,
-   * inclusive.
-   */
-  @override
-  double cloudCover;
-
-  /// [optional] The dew point in degrees Fahrenheit.
-  @override
-  double dewPoint;
-
-  /// [optional] The relative humidity, between 0 and 1, inclusive.
-  double humidity;
-
-  /**
-   * [optional] A machine-readable text summary of this data point, suitable 
-   * for selecting an icon for display. If defined, this property will have one 
-   * of the following values: 
-   * 
-   *     clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, 
-   *     partly-cloudy-day, or partly-cloudy-night. 
-   * 
-   * Developers should ensure that a sensible default is defined, as 
-   * additional values, such as hail, thunderstorm, or tornado, may be defined 
-   * in the future.
-   */
-  @override
-  String icon;
-
-  /**
-   * [optional] The columnar density of total atmospheric ozone at the given
-   * time in Dobson units.
-   */
-  @override
-  double ozone;
-
-  /**
-   * [optional] The intensity (in inches of liquid water per hour) of 
-   * precipitation occurring at the given time. This value is conditional on 
-   * probability (that is, assuming any precipitation occurs at all) for 
-   * minutely data points, and unconditional otherwise.
-   */
-  @override
-  double precipIntensity;
-
-  /**
-   * [optional] The probability of precipitation occurring, between 0 and 1, 
-   * inclusive.
-   */
-  @override
-  double precipProbability;
-
-  /**
-   * [optional] The type of precipitation occurring at the given time. If 
-   * defined, this property will have one of the following values: 
-   * 
-   *     "rain", "snow", or "sleet" (which refers to each of freezing rain, 
-   *     ice pellets, and “wintery mix”). 
-   * 
-   * (If precipIntensity is zero, then this property will not be defined.)
-   */
-  @override
-  String precipType;
-
-  /// [optional] The sea-level air pressure in millibars.
-  @override
-  double pressure;
-
-  /**
-   * [optional] A human-readable text summary of this data point. (This property 
-   * has millions of possible values, so don’t use it for automated purposes: 
-   * use the icon property, instead!)
-   */
-  @override
-  String summary;
-
-  /**
-   * [required] The UNIX time at which this data point begins. minutely data 
-   * point are always aligned to the top of the minute, hourly data point 
-   * objects to the top of the hour, and daily data point objects to midnight 
-   * of the day, all according to the local time zone.
-   */
-  @override
-  int time;
-
-  /// [optional] The average visibility in miles, capped at 10 miles.
-  @override
-  double visibility;
-
-  /**
-   * [optional] The direction that the wind is coming from in degrees, with 
-   * true north at 0° and progressing clockwise. (If windSpeed is zero, then 
-   * this value will not be defined.)
-   */
-  @override
-  double windBearing;
-
-  /// [optional] The wind speed in miles per hour.
-  @override
-  double windSpeed;
+  MinutelyDataPoint();
+  factory MinutelyDataPoint.fromJson(Map<String, dynamic> json) => _$MinutelyDataPointFromJson(json);
 }
 
 /**
  * A data point containing the weather conditions hour-by-hour for the next two 
  * days.
  */
-@JsonClass()
-class HourlyDataPoint implements DataPointBase {
+@JsonSerializable()
+class HourlyDataPoint extends DataPointBase {
   /**
    * [optional] The apparent (or “feels like”) temperature in degrees 
    * Fahrenheit.
@@ -353,113 +156,15 @@ class HourlyDataPoint implements DataPointBase {
   /// [optional] The air temperature in degrees Fahrenheit.
   double temperature;
 
-  /**
-   * [optional] The percentage of sky occluded by clouds, between 0 and 1,
-   * inclusive.
-   */
-  @override
-  double cloudCover;
-
-  /// [optional] The dew point in degrees Fahrenheit.
-  @override
-  double dewPoint;
-
-  /// [optional] The relative humidity, between 0 and 1, inclusive.
-  double humidity;
-
-  /**
-   * [optional] A machine-readable text summary of this data point, suitable 
-   * for selecting an icon for display. If defined, this property will have one 
-   * of the following values: 
-   * 
-   *     clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, 
-   *     partly-cloudy-day, or partly-cloudy-night. 
-   * 
-   * Developers should ensure that a sensible default is defined, as 
-   * additional values, such as hail, thunderstorm, or tornado, may be defined 
-   * in the future.
-   */
-  @override
-  String icon;
-
-  /**
-   * [optional] The columnar density of total atmospheric ozone at the given
-   * time in Dobson units.
-   */
-  @override
-  double ozone;
-
-  /**
-   * [optional] The intensity (in inches of liquid water per hour) of 
-   * precipitation occurring at the given time. This value is conditional on 
-   * probability (that is, assuming any precipitation occurs at all) for 
-   * minutely data points, and unconditional otherwise.
-   */
-  @override
-  double precipIntensity;
-
-  /**
-   * [optional] The probability of precipitation occurring, between 0 and 1, 
-   * inclusive.
-   */
-  @override
-  double precipProbability;
-
-  /**
-   * [optional] The type of precipitation occurring at the given time. If 
-   * defined, this property will have one of the following values: 
-   * 
-   *     "rain", "snow", or "sleet" (which refers to each of freezing rain, 
-   *     ice pellets, and “wintery mix”). 
-   * 
-   * (If precipIntensity is zero, then this property will not be defined.)
-   */
-  @override
-  String precipType;
-
-  /// [optional] The sea-level air pressure in millibars.
-  @override
-  double pressure;
-
-  /**
-   * [optional] A human-readable text summary of this data point. (This property 
-   * has millions of possible values, so don’t use it for automated purposes: 
-   * use the icon property, instead!)
-   */
-  @override
-  String summary;
-
-  /**
-   * [required] The UNIX time at which this data point begins. minutely data 
-   * point are always aligned to the top of the minute, hourly data point 
-   * objects to the top of the hour, and daily data point objects to midnight 
-   * of the day, all according to the local time zone.
-   */
-  @override
-  int time;
-
-  /// [optional] The average visibility in miles, capped at 10 miles.
-  @override
-  double visibility;
-
-  /**
-   * [optional] The direction that the wind is coming from in degrees, with 
-   * true north at 0° and progressing clockwise. (If windSpeed is zero, then 
-   * this value will not be defined.)
-   */
-  @override
-  double windBearing;
-
-  /// [optional] The wind speed in miles per hour.
-  @override
-  double windSpeed;
+  HourlyDataPoint();
+  factory HourlyDataPoint.fromJson(Map<String, dynamic> json) => _$HourlyDataPointFromJson(json);
 }
 
 /**
  * A data point containing the weather conditions day-by-day for the next week.
  */
-@JsonClass()
-class DailyDataPoint implements DataPointBase {
+@JsonSerializable()
+class DailyDataPoint extends DataPointBase {
   /// [optional] The maximum value of apparentTemperature during a given day.
   double apparentTemperatureMax;
 
@@ -527,104 +232,6 @@ class DailyDataPoint implements DataPointBase {
   /// [optional] The UNIX time of when temperatureMin occurs during a given day.
   int temperatureMinTime;
 
-  /**
-   * [optional] The percentage of sky occluded by clouds, between 0 and 1,
-   * inclusive.
-   */
-  @override
-  double cloudCover;
-
-  /// [optional] The dew point in degrees Fahrenheit.
-  @override
-  double dewPoint;
-
-  /// [optional] The relative humidity, between 0 and 1, inclusive.
-  double humidity;
-
-  /**
-   * [optional] A machine-readable text summary of this data point, suitable 
-   * for selecting an icon for display. If defined, this property will have one 
-   * of the following values: 
-   * 
-   *     clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, 
-   *     partly-cloudy-day, or partly-cloudy-night. 
-   * 
-   * Developers should ensure that a sensible default is defined, as 
-   * additional values, such as hail, thunderstorm, or tornado, may be defined 
-   * in the future.
-   */
-  @override
-  String icon;
-
-  /**
-   * [optional] The columnar density of total atmospheric ozone at the given
-   * time in Dobson units.
-   */
-  @override
-  double ozone;
-
-  /**
-   * [optional] The intensity (in inches of liquid water per hour) of 
-   * precipitation occurring at the given time. This value is conditional on 
-   * probability (that is, assuming any precipitation occurs at all) for 
-   * minutely data points, and unconditional otherwise.
-   */
-  @override
-  double precipIntensity;
-
-  /**
-   * [optional] The probability of precipitation occurring, between 0 and 1, 
-   * inclusive.
-   */
-  @override
-  double precipProbability;
-
-  /**
-   * [optional] The type of precipitation occurring at the given time. If 
-   * defined, this property will have one of the following values: 
-   * 
-   *     "rain", "snow", or "sleet" (which refers to each of freezing rain, 
-   *     ice pellets, and “wintery mix”). 
-   * 
-   * (If precipIntensity is zero, then this property will not be defined.)
-   */
-  @override
-  String precipType;
-
-  /// [optional] The sea-level air pressure in millibars.
-  @override
-  double pressure;
-
-  /**
-   * [optional] A human-readable text summary of this data point. (This property 
-   * has millions of possible values, so don’t use it for automated purposes: 
-   * use the icon property, instead!)
-   */
-  @override
-  String summary;
-
-  /**
-   * [required] The UNIX time at which this data point begins. minutely data 
-   * point are always aligned to the top of the minute, hourly data point 
-   * objects to the top of the hour, and daily data point objects to midnight 
-   * of the day, all according to the local time zone.
-   */
-  @override
-  int time;
-
-  /// [optional] The average visibility in miles, capped at 10 miles.
-  @override
-  double visibility;
-
-  /**
-   * [optional] The direction that the wind is coming from in degrees, with 
-   * true north at 0° and progressing clockwise. (If windSpeed is zero, then 
-   * this value will not be defined.)
-   */
-  @override
-  double windBearing;
-
-  /// [optional] The wind speed in miles per hour.
-  @override
-  double windSpeed;
+  DailyDataPoint();
+  factory DailyDataPoint.fromJson(Map<String, dynamic> json) => _$DailyDataPointFromJson(json);
 }

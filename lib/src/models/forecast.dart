@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 part of darksky_weather;
 
-@JsonClass()
+@JsonSerializable()
 class Forecast {
   /// [required] The requested latitude.
   double latitude;
@@ -40,4 +40,7 @@ class Forecast {
    * the next week.
    */
   DailyDataBlock daily;
+
+  Forecast();
+  factory Forecast.fromJson(Map<String, dynamic> json) => _$ForecastFromJson(json);
 }

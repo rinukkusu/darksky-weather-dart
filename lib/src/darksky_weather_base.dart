@@ -27,8 +27,9 @@ abstract class DarkSkyWeatherBase {
     var url = _getForecastUrl(lat, lon, rExcludes, rLanguage, rUnits);
     var bytes = await _getImpl(url);
 
-    var decoded = UTF8.decode(bytes);
-    var forecast = ForecastMapper.fromJson(decoded);
+    var decoded = utf8.decode(bytes);
+    var map = json.decode(decoded);
+    var forecast = new Forecast.fromJson(map);
 
     return forecast;
   }

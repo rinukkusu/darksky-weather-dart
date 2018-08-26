@@ -17,70 +17,46 @@ abstract class DataBlockBase {
  * A data block containing the weather conditions minute-by-minute for the next 
  * hour.
  */
-@JsonClass() 
-class MinutelyDataBlock implements DataBlockBase {
+@JsonSerializable()
+class MinutelyDataBlock extends DataBlockBase {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
    */
   List<MinutelyDataPoint> data;
 
-  /**
-   * [optional] A machine-readable text summary of this data block. (May take 
-   * on the same values as the icon property of data points.)
-   */
-  @override
-  String icon;
-
-  /// [optional] A human-readable summary of this data block.
-  @override
-  String summary;
+  MinutelyDataBlock();
+  factory MinutelyDataBlock.fromJson(Map<String, dynamic> json) => _$MinutelyDataBlockFromJson(json);
 }
 
 /**
  * A data block containing the weather conditions hour-by-hour for the next two 
  * days.
  */
-@JsonClass() 
-class HourlyDataBlock implements DataBlockBase  {
+@JsonSerializable()
+class HourlyDataBlock extends DataBlockBase  {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
    */
   List<HourlyDataPoint> data;
 
-  /**
-   * [optional] A machine-readable text summary of this data block. (May take 
-   * on the same values as the icon property of data points.)
-   */
-  @override
-  String icon;
-
-  /// [optional] A human-readable summary of this data block.
-  @override
-  String summary;
+  HourlyDataBlock();
+  factory HourlyDataBlock.fromJson(Map<String, dynamic> json) => _$HourlyDataBlockFromJson(json);
 }
 
 
 /**
  * A data block containing the weather conditions day-by-day for the next week.
  */
-@JsonClass() 
-class DailyDataBlock implements DataBlockBase  {
+@JsonSerializable() 
+class DailyDataBlock extends DataBlockBase  {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
    */
   List<DailyDataPoint> data;
 
-  /**
-   * [optional] A machine-readable text summary of this data block. (May take 
-   * on the same values as the icon property of data points.)
-   */
-  @override
-  String icon;
-
-  /// [optional] A human-readable summary of this data block.
-  @override
-  String summary;
+  DailyDataBlock();
+  factory DailyDataBlock.fromJson(Map<String, dynamic> json) => _$DailyDataBlockFromJson(json);
 }

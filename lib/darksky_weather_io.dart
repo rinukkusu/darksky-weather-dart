@@ -8,9 +8,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:owl/annotation/json.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-import 'darksky_weather_io.json.g.dart';
+part 'darksky_weather_io.g.dart';
 
 part 'src/darksky_weather_base.dart';
 part 'src/darksky_weather_io.dart';
