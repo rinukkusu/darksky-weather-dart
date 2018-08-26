@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0
+
+- upgrade to dart sdk 2.0
+- use [json_serializable](https://github.com/dart-lang/json_serializable) instead of owl
+
 ## 0.1.1
 
 - fix deserialisation issues
