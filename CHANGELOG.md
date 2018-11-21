@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- add tests
+- make pub analyzer happy
+
 ## 1.0.0
 
 - upgrade to dart sdk 2.0

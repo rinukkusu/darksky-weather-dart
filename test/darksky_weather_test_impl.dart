@@ -10,7 +10,7 @@ import 'dart:io';
 
 import 'package:json_annotation/json_annotation.dart';
 
-part '../lib/darksky_weather_io.g.dart';
+part 'darksky_weather_test_impl.g.dart';
 
 part '../lib/src/darksky_weather_base.dart';
 part 'darksky_client_test_impl.dart';

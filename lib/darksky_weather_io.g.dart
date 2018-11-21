@@ -25,16 +25,6 @@ Forecast _$ForecastFromJson(Map<String, dynamic> json) {
         : DailyDataBlock.fromJson(json['daily'] as Map<String, dynamic>);
 }
 
-Map<String, dynamic> _$ForecastToJson(Forecast instance) => <String, dynamic>{
-      'latitude': instance.latitude,
-      'longitude': instance.longitude,
-      'timezone': instance.timezone,
-      'currently': instance.currently,
-      'minutely': instance.minutely,
-      'hourly': instance.hourly,
-      'daily': instance.daily
-    };
-
 CurrentlyDataPoint _$CurrentlyDataPointFromJson(Map<String, dynamic> json) {
   return CurrentlyDataPoint()
     ..cloudCover = (json['cloudCover'] as num)?.toDouble()
@@ -56,27 +46,6 @@ CurrentlyDataPoint _$CurrentlyDataPointFromJson(Map<String, dynamic> json) {
     ..temperature = (json['temperature'] as num)?.toDouble();
 }
 
-Map<String, dynamic> _$CurrentlyDataPointToJson(CurrentlyDataPoint instance) =>
-    <String, dynamic>{
-      'cloudCover': instance.cloudCover,
-      'dewPoint': instance.dewPoint,
-      'humidity': instance.humidity,
-      'icon': instance.icon,
-      'ozone': instance.ozone,
-      'precipIntensity': instance.precipIntensity,
-      'precipProbability': instance.precipProbability,
-      'precipType': instance.precipType,
-      'pressure': instance.pressure,
-      'summary': instance.summary,
-      'time': instance.time,
-      'visibility': instance.visibility,
-      'windBearing': instance.windBearing,
-      'windSpeed': instance.windSpeed,
-      'nearestStormBearing': instance.nearestStormBearing,
-      'nearestStormDistance': instance.nearestStormDistance,
-      'temperature': instance.temperature
-    };
-
 MinutelyDataPoint _$MinutelyDataPointFromJson(Map<String, dynamic> json) {
   return MinutelyDataPoint()
     ..cloudCover = (json['cloudCover'] as num)?.toDouble()
@@ -95,25 +64,6 @@ MinutelyDataPoint _$MinutelyDataPointFromJson(Map<String, dynamic> json) {
     ..windSpeed = (json['windSpeed'] as num)?.toDouble()
     ..apparentTemperature = (json['apparentTemperature'] as num)?.toDouble();
 }
-
-Map<String, dynamic> _$MinutelyDataPointToJson(MinutelyDataPoint instance) =>
-    <String, dynamic>{
-      'cloudCover': instance.cloudCover,
-      'dewPoint': instance.dewPoint,
-      'humidity': instance.humidity,
-      'icon': instance.icon,
-      'ozone': instance.ozone,
-      'precipIntensity': instance.precipIntensity,
-      'precipProbability': instance.precipProbability,
-      'precipType': instance.precipType,
-      'pressure': instance.pressure,
-      'summary': instance.summary,
-      'time': instance.time,
-      'visibility': instance.visibility,
-      'windBearing': instance.windBearing,
-      'windSpeed': instance.windSpeed,
-      'apparentTemperature': instance.apparentTemperature
-    };
 
 HourlyDataPoint _$HourlyDataPointFromJson(Map<String, dynamic> json) {
   return HourlyDataPoint()
@@ -135,27 +85,6 @@ HourlyDataPoint _$HourlyDataPointFromJson(Map<String, dynamic> json) {
     ..precipAccumulation = (json['precipAccumulation'] as num)?.toDouble()
     ..temperature = (json['temperature'] as num)?.toDouble();
 }
-
-Map<String, dynamic> _$HourlyDataPointToJson(HourlyDataPoint instance) =>
-    <String, dynamic>{
-      'cloudCover': instance.cloudCover,
-      'dewPoint': instance.dewPoint,
-      'humidity': instance.humidity,
-      'icon': instance.icon,
-      'ozone': instance.ozone,
-      'precipIntensity': instance.precipIntensity,
-      'precipProbability': instance.precipProbability,
-      'precipType': instance.precipType,
-      'pressure': instance.pressure,
-      'summary': instance.summary,
-      'time': instance.time,
-      'visibility': instance.visibility,
-      'windBearing': instance.windBearing,
-      'windSpeed': instance.windSpeed,
-      'apparentTemperature': instance.apparentTemperature,
-      'precipAccumulation': instance.precipAccumulation,
-      'temperature': instance.temperature
-    };
 
 DailyDataPoint _$DailyDataPointFromJson(Map<String, dynamic> json) {
   return DailyDataPoint()
@@ -192,39 +121,6 @@ DailyDataPoint _$DailyDataPointFromJson(Map<String, dynamic> json) {
     ..temperatureMinTime = json['temperatureMinTime'] as int;
 }
 
-Map<String, dynamic> _$DailyDataPointToJson(DailyDataPoint instance) =>
-    <String, dynamic>{
-      'cloudCover': instance.cloudCover,
-      'dewPoint': instance.dewPoint,
-      'humidity': instance.humidity,
-      'icon': instance.icon,
-      'ozone': instance.ozone,
-      'precipIntensity': instance.precipIntensity,
-      'precipProbability': instance.precipProbability,
-      'precipType': instance.precipType,
-      'pressure': instance.pressure,
-      'summary': instance.summary,
-      'time': instance.time,
-      'visibility': instance.visibility,
-      'windBearing': instance.windBearing,
-      'windSpeed': instance.windSpeed,
-      'apparentTemperatureMax': instance.apparentTemperatureMax,
-      'apparentTemperatureMaxTime': instance.apparentTemperatureMaxTime,
-      'apparentTemperatureMin': instance.apparentTemperatureMin,
-      'apparentTemperatureMinTime': instance.apparentTemperatureMinTime,
-      'moonPhase': instance.moonPhase,
-      'precipAccumulation': instance.precipAccumulation,
-      'precipIntensityMax': instance.precipIntensityMax,
-      'precipIntensityMaxTime': instance.precipIntensityMaxTime,
-      'sunriseTime': instance.sunriseTime,
-      'sunsetTime': instance.sunsetTime,
-      'temperature': instance.temperature,
-      'temperatureMax': instance.temperatureMax,
-      'temperatureMaxTime': instance.temperatureMaxTime,
-      'temperatureMin': instance.temperatureMin,
-      'temperatureMinTime': instance.temperatureMinTime
-    };
-
 MinutelyDataBlock _$MinutelyDataBlockFromJson(Map<String, dynamic> json) {
   return MinutelyDataBlock()
     ..summary = json['summary'] as String
@@ -235,13 +131,6 @@ MinutelyDataBlock _$MinutelyDataBlockFromJson(Map<String, dynamic> json) {
             : MinutelyDataPoint.fromJson(e as Map<String, dynamic>))
         ?.toList();
 }
-
-Map<String, dynamic> _$MinutelyDataBlockToJson(MinutelyDataBlock instance) =>
-    <String, dynamic>{
-      'summary': instance.summary,
-      'icon': instance.icon,
-      'data': instance.data
-    };
 
 HourlyDataBlock _$HourlyDataBlockFromJson(Map<String, dynamic> json) {
   return HourlyDataBlock()
@@ -254,13 +143,6 @@ HourlyDataBlock _$HourlyDataBlockFromJson(Map<String, dynamic> json) {
         ?.toList();
 }
 
-Map<String, dynamic> _$HourlyDataBlockToJson(HourlyDataBlock instance) =>
-    <String, dynamic>{
-      'summary': instance.summary,
-      'icon': instance.icon,
-      'data': instance.data
-    };
-
 DailyDataBlock _$DailyDataBlockFromJson(Map<String, dynamic> json) {
   return DailyDataBlock()
     ..summary = json['summary'] as String
@@ -271,10 +153,3 @@ DailyDataBlock _$DailyDataBlockFromJson(Map<String, dynamic> json) {
             : DailyDataPoint.fromJson(e as Map<String, dynamic>))
         ?.toList();
 }
-
-Map<String, dynamic> _$DailyDataBlockToJson(DailyDataBlock instance) =>
-    <String, dynamic>{
-      'summary': instance.summary,
-      'icon': instance.icon,
-      'data': instance.data
-    };
