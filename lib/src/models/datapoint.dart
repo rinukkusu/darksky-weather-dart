@@ -116,7 +116,8 @@ class CurrentlyDataPoint extends DataPointBase {
   double temperature;
 
   CurrentlyDataPoint();
-  factory CurrentlyDataPoint.fromJson(Map<String, dynamic> json) => _$CurrentlyDataPointFromJson(json);
+  factory CurrentlyDataPoint.fromJson(Map<String, dynamic> json) =>
+      _$CurrentlyDataPointFromJson(json);
 }
 
 /**
@@ -132,7 +133,8 @@ class MinutelyDataPoint extends DataPointBase {
   double apparentTemperature;
 
   MinutelyDataPoint();
-  factory MinutelyDataPoint.fromJson(Map<String, dynamic> json) => _$MinutelyDataPointFromJson(json);
+  factory MinutelyDataPoint.fromJson(Map<String, dynamic> json) =>
+      _$MinutelyDataPointFromJson(json);
 }
 
 /**
@@ -157,7 +159,8 @@ class HourlyDataPoint extends DataPointBase {
   double temperature;
 
   HourlyDataPoint();
-  factory HourlyDataPoint.fromJson(Map<String, dynamic> json) => _$HourlyDataPointFromJson(json);
+  factory HourlyDataPoint.fromJson(Map<String, dynamic> json) =>
+      _$HourlyDataPointFromJson(json);
 }
 
 /**
@@ -233,5 +236,6 @@ class DailyDataPoint extends DataPointBase {
   int temperatureMinTime;
 
   DailyDataPoint();
-  factory DailyDataPoint.fromJson(Map<String, dynamic> json) => _$DailyDataPointFromJson(json);
+  factory DailyDataPoint.fromJson(Map<String, dynamic> json) =>
+      _$DailyDataPointFromJson(json);
 }

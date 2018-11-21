@@ -42,5 +42,6 @@ class Forecast {
   DailyDataBlock daily;
 
   Forecast();
-  factory Forecast.fromJson(Map<String, dynamic> json) => _$ForecastFromJson(json);
+  factory Forecast.fromJson(Map<String, dynamic> json) =>
+      _$ForecastFromJson(json);
 }

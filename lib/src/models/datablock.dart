@@ -26,7 +26,8 @@ class MinutelyDataBlock extends DataBlockBase {
   List<MinutelyDataPoint> data;
 
   MinutelyDataBlock();
-  factory MinutelyDataBlock.fromJson(Map<String, dynamic> json) => _$MinutelyDataBlockFromJson(json);
+  factory MinutelyDataBlock.fromJson(Map<String, dynamic> json) =>
+      _$MinutelyDataBlockFromJson(json);
 }
 
 /**
@@ -34,7 +35,7 @@ class MinutelyDataBlock extends DataBlockBase {
  * days.
  */
 @JsonSerializable()
-class HourlyDataBlock extends DataBlockBase  {
+class HourlyDataBlock extends DataBlockBase {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
@@ -42,15 +43,15 @@ class HourlyDataBlock extends DataBlockBase  {
   List<HourlyDataPoint> data;
 
   HourlyDataBlock();
-  factory HourlyDataBlock.fromJson(Map<String, dynamic> json) => _$HourlyDataBlockFromJson(json);
+  factory HourlyDataBlock.fromJson(Map<String, dynamic> json) =>
+      _$HourlyDataBlockFromJson(json);
 }
-
 
 /**
  * A data block containing the weather conditions day-by-day for the next week.
  */
-@JsonSerializable() 
-class DailyDataBlock extends DataBlockBase  {
+@JsonSerializable()
+class DailyDataBlock extends DataBlockBase {
   /**
    * [required] An array of data points, ordered by time, which together 
    * describe the weather conditions at the requested location over time.
@@ -58,5 +59,6 @@ class DailyDataBlock extends DataBlockBase  {
   List<DailyDataPoint> data;
 
   DailyDataBlock();
-  factory DailyDataBlock.fromJson(Map<String, dynamic> json) => _$DailyDataBlockFromJson(json);
+  factory DailyDataBlock.fromJson(Map<String, dynamic> json) =>
+      _$DailyDataBlockFromJson(json);
 }
