@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0
+
+- upgrade to json_annotation 3.0.0
+
 ## 1.2.0
 
 - add timemachine feature
