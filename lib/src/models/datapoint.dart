@@ -3,10 +3,8 @@
 part of darksky_weather;
 
 abstract class DataPointBase {
-  /**
-   * [optional] The percentage of sky occluded by clouds, between 0 and 1,
-   * inclusive.
-   */
+  /// [optional] The percentage of sky occluded by clouds, between 0 and 1,
+  /// inclusive.
   double cloudCover;
 
   /// [optional] The dew point in degrees Fahrenheit.
@@ -15,67 +13,53 @@ abstract class DataPointBase {
   /// [optional] The relative humidity, between 0 and 1, inclusive.
   double humidity;
 
-  /**
-   * [optional] A machine-readable text summary of this data point, suitable 
-   * for selecting an icon for display. If defined, this property will have one 
-   * of the following values: 
-   * 
-   *     clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, 
-   *     partly-cloudy-day, or partly-cloudy-night. 
-   * 
-   * Developers should ensure that a sensible default is defined, as 
-   * additional values, such as hail, thunderstorm, or tornado, may be defined 
-   * in the future.
-   */
+  /// [optional] A machine-readable text summary of this data point, suitable 
+  /// for selecting an icon for display. If defined, this property will have one 
+  /// of the following values: 
+  /// 
+  ///     clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, 
+  ///     partly-cloudy-day, or partly-cloudy-night. 
+  /// 
+  /// Developers should ensure that a sensible default is defined, as 
+  /// additional values, such as hail, thunderstorm, or tornado, may be defined 
+  /// in the future.
   String icon;
 
-  /**
-   * [optional] The columnar density of total atmospheric ozone at the given
-   * time in Dobson units.
-   */
+  /// [optional] The columnar density of total atmospheric ozone at the given
+  /// time in Dobson units.
   double ozone;
 
-  /**
-   * [optional] The intensity (in inches of liquid water per hour) of 
-   * precipitation occurring at the given time. This value is conditional on 
-   * probability (that is, assuming any precipitation occurs at all) for 
-   * minutely data points, and unconditional otherwise.
-   */
+  /// [optional] The intensity (in inches of liquid water per hour) of 
+  /// precipitation occurring at the given time. This value is conditional on 
+  /// probability (that is, assuming any precipitation occurs at all) for 
+  /// minutely data points, and unconditional otherwise.
   double precipIntensity;
 
-  /**
-   * [optional] The probability of precipitation occurring, between 0 and 1, 
-   * inclusive.
-   */
+  /// [optional] The probability of precipitation occurring, between 0 and 1, 
+  /// inclusive.
   double precipProbability;
 
-  /**
-   * [optional] The type of precipitation occurring at the given time. If 
-   * defined, this property will have one of the following values: 
-   * 
-   *     "rain", "snow", or "sleet" (which refers to each of freezing rain, 
-   *     ice pellets, and “wintery mix”). 
-   * 
-   * (If precipIntensity is zero, then this property will not be defined.)
-   */
+  /// [optional] The type of precipitation occurring at the given time. If 
+  /// defined, this property will have one of the following values: 
+  /// 
+  ///     "rain", "snow", or "sleet" (which refers to each of freezing rain, 
+  ///     ice pellets, and “wintery mix”). 
+  /// 
+  /// (If precipIntensity is zero, then this property will not be defined.)
   String precipType;
 
   /// [optional] The sea-level air pressure in millibars.
   double pressure;
 
-  /**
-   * [optional] A human-readable text summary of this data point. (This property 
-   * has millions of possible values, so don’t use it for automated purposes: 
-   * use the icon property, instead!)
-   */
+  /// [optional] A human-readable text summary of this data point. (This property 
+  /// has millions of possible values, so don’t use it for automated purposes: 
+  /// use the icon property, instead!)
   String summary;
 
-  /**
-   * [required] The UNIX time at which this data point begins. minutely data 
-   * point are always aligned to the top of the minute, hourly data point 
-   * objects to the top of the hour, and daily data point objects to midnight 
-   * of the day, all according to the local time zone.
-   */
+  /// [required] The UNIX time at which this data point begins. minutely data 
+  /// point are always aligned to the top of the minute, hourly data point 
+  /// objects to the top of the hour, and daily data point objects to midnight 
+  /// of the day, all according to the local time zone.
   int time;
 
   /// [optional] The average visibility in miles, capped at 10 miles.
