@@ -6,23 +6,17 @@ abstract class DataBlockBase {
   /// [optional] A human-readable summary of this data block.
   String summary;
 
-  /**
-   * [optional] A machine-readable text summary of this data block. (May take 
-   * on the same values as the icon property of data points.)
-   */
+  /// [optional] A machine-readable text summary of this data block. (May take 
+  /// on the same values as the icon property of data points.)
   String icon;
 }
 
-/**
- * A data block containing the weather conditions minute-by-minute for the next 
- * hour.
- */
+/// A data block containing the weather conditions minute-by-minute for the next 
+/// hour.
 @JsonSerializable()
 class MinutelyDataBlock extends DataBlockBase {
-  /**
-   * [required] An array of data points, ordered by time, which together 
-   * describe the weather conditions at the requested location over time.
-   */
+  /// [required] An array of data points, ordered by time, which together 
+  /// describe the weather conditions at the requested location over time.
   List<MinutelyDataPoint> data;
 
   MinutelyDataBlock();
@@ -30,16 +24,12 @@ class MinutelyDataBlock extends DataBlockBase {
       _$MinutelyDataBlockFromJson(json);
 }
 
-/**
- * A data block containing the weather conditions hour-by-hour for the next two 
- * days.
- */
+/// A data block containing the weather conditions hour-by-hour for the next two 
+/// days.
 @JsonSerializable()
 class HourlyDataBlock extends DataBlockBase {
-  /**
-   * [required] An array of data points, ordered by time, which together 
-   * describe the weather conditions at the requested location over time.
-   */
+  /// [required] An array of data points, ordered by time, which together 
+  /// describe the weather conditions at the requested location over time.
   List<HourlyDataPoint> data;
 
   HourlyDataBlock();
@@ -47,15 +37,11 @@ class HourlyDataBlock extends DataBlockBase {
       _$HourlyDataBlockFromJson(json);
 }
 
-/**
- * A data block containing the weather conditions day-by-day for the next week.
- */
+/// A data block containing the weather conditions day-by-day for the next week.
 @JsonSerializable()
 class DailyDataBlock extends DataBlockBase {
-  /**
-   * [required] An array of data points, ordered by time, which together 
-   * describe the weather conditions at the requested location over time.
-   */
+  /// [required] An array of data points, ordered by time, which together 
+  /// describe the weather conditions at the requested location over time.
   List<DailyDataPoint> data;
 
   DailyDataBlock();

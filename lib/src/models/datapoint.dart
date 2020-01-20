@@ -81,35 +81,28 @@ abstract class DataPointBase {
   /// [optional] The average visibility in miles, capped at 10 miles.
   double visibility;
 
-  /**
-   * [optional] The direction that the wind is coming from in degrees, with 
-   * true north at 0° and progressing clockwise. (If windSpeed is zero, then 
-   * this value will not be defined.)
-   */
+  /// [optional] The direction that the wind is coming from in degrees, with 
+  /// true north at 0° and progressing clockwise. (If windSpeed is zero, then 
+  /// this value will not be defined.)
+
   double windBearing;
 
   /// [optional] The wind speed in miles per hour.
   double windSpeed;
 }
 
-/**
- * A data point containing the current weather conditions at the requested 
- * location.
- */
+/// A data point containing the current weather conditions at the requested 
+/// location.
 @JsonSerializable()
 class CurrentlyDataPoint extends DataPointBase {
-  /**
-   * [optional] The approximate direction of the nearest storm in degrees, 
-   * with true north at 0° and progressing clockwise. (If nearestStormDistance 
-   * is zero, then this value will not be defined.)
-   */
+  /// [optional] The approximate direction of the nearest storm in degrees, 
+  /// with true north at 0° and progressing clockwise. (If nearestStormDistance 
+  /// is zero, then this value will not be defined.)
   double nearestStormBearing;
 
-  /**
-   * [optional] The approximate distance to the nearest storm in miles. (A
-   * storm distance of 0 doesn’t necessarily refer to a storm at the requested
-   * location, but rather a storm in the vicinity of that location.)
-   */
+  /// [optional] The approximate distance to the nearest storm in miles. (A
+  /// storm distance of 0 doesn’t necessarily refer to a storm at the requested
+  /// location, but rather a storm in the vicinity of that location.)
   double nearestStormDistance;
 
   /// [optional] The air temperature in degrees Fahrenheit.
@@ -120,16 +113,12 @@ class CurrentlyDataPoint extends DataPointBase {
       _$CurrentlyDataPointFromJson(json);
 }
 
-/**
- * A data point containing the weather conditions minute-by-minute for the next 
- * hour.
- */
+/// A data point containing the weather conditions minute-by-minute for the next 
+/// hour.
 @JsonSerializable()
 class MinutelyDataPoint extends DataPointBase {
-  /**
-   * [optional] The apparent (or “feels like”) temperature in degrees 
-   * Fahrenheit.
-   */
+  /// [optional] The apparent (or “feels like”) temperature in degrees 
+  /// Fahrenheit.
   double apparentTemperature;
 
   MinutelyDataPoint();
@@ -137,22 +126,16 @@ class MinutelyDataPoint extends DataPointBase {
       _$MinutelyDataPointFromJson(json);
 }
 
-/**
- * A data point containing the weather conditions hour-by-hour for the next two 
- * days.
- */
+/// A data point containing the weather conditions hour-by-hour for the next two 
+/// days.
 @JsonSerializable()
 class HourlyDataPoint extends DataPointBase {
-  /**
-   * [optional] The apparent (or “feels like”) temperature in degrees 
-   * Fahrenheit.
-   */
+  /// [optional] The apparent (or “feels like”) temperature in degrees 
+  /// Fahrenheit.
   double apparentTemperature;
 
-  /**
-   * [optional] The amount of snowfall accumulation expected to occur, in
-   * inches. (If no snowfall is expected, this property will not be defined.)
-   */
+  /// [optional] The amount of snowfall accumulation expected to occur, in
+  /// inches. (If no snowfall is expected, this property will not be defined.)
   double precipAccumulation;
 
   /// [optional] The air temperature in degrees Fahrenheit.
@@ -163,55 +146,43 @@ class HourlyDataPoint extends DataPointBase {
       _$HourlyDataPointFromJson(json);
 }
 
-/**
- * A data point containing the weather conditions day-by-day for the next week.
- */
+/// A data point containing the weather conditions day-by-day for the next week.
 @JsonSerializable()
 class DailyDataPoint extends DataPointBase {
   /// [optional] The maximum value of apparentTemperature during a given day.
   double apparentTemperatureMax;
 
-  /**
-   * [optional] The UNIX time of when apparentTemperatureMax occurs during a 
-   * given day.
-   */
+  /// [optional] The UNIX time of when apparentTemperatureMax occurs during a 
+  /// given day.
   int apparentTemperatureMaxTime;
 
   /// [optional] The minimum value of apparentTemperature during a given day.
   double apparentTemperatureMin;
 
-  /**
-   * [optional] The UNIX time of when apparentTemperatureMin occurs during a 
-   * given day.
-   */
+  /// [optional] The UNIX time of when apparentTemperatureMin occurs during a 
+  /// given day.
   int apparentTemperatureMinTime;
 
-  /**
-   * [optional] The fractional part of the lunation number during the given
-   * day:
-   *     a value of 0 corresponds to a new moon,
-   *     0.25 to a first quarter moon,
-   *     0.5 to a full moon,
-   *     and 0.75 to a last quarter moon.
-   *
-   * (The ranges in between these represent waxing crescent, waxing gibbous,
-   * waning gibbous, and waning crescent moons, respectively.)
-   */
+  /// [optional] The fractional part of the lunation number during the given
+  /// day:
+  ///     a value of 0 corresponds to a new moon,
+  ///     0.25 to a first quarter moon,
+  ///     0.5 to a full moon,
+  ///     and 0.75 to a last quarter moon.
+  ///
+  /// (The ranges in between these represent waxing crescent, waxing gibbous,
+  /// waning gibbous, and waning crescent moons, respectively.)
   double moonPhase;
 
-  /**
-   * [optional] The amount of snowfall accumulation expected to occur, in
-   * inches. (If no snowfall is expected, this property will not be defined.)
-   */
+  /// [optional] The amount of snowfall accumulation expected to occur, in
+  /// inches. (If no snowfall is expected, this property will not be defined.)
   double precipAccumulation;
 
   /// [optional] The maximum value of precipIntensity during a given day.
   double precipIntensityMax;
 
-  /**
-   * [optional] The UNIX time of when precipIntensityMax occurs during a given 
-   * day.
-   */
+  /// [optional] The UNIX time of when precipIntensityMax occurs during a given 
+  /// day.
   int precipIntensityMaxTime;
 
   /// [optional] The UNIX time of when the sun will rise during a given day.

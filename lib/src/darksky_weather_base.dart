@@ -15,15 +15,15 @@ abstract class DarkSkyWeatherBase {
       '&lang=$lang' +
       '&units=$units';
 
-  String _getTimeMachineForecastUrl(
-        double lat, double lon, DateTime time, String excludes, String lang, String units){
-          String timeInSeconds = (time.millisecondsSinceEpoch / 1000).round().toString();
-          return '$_baseUrl/forecast/$_apiToken/$lat,$lon,$timeInSeconds' +
-              '?exclude=$excludes' +
-              '&lang=$lang' +
-              '&units=$units';
+  String _getTimeMachineForecastUrl(double lat, double lon, DateTime time,
+      String excludes, String lang, String units) {
+    String timeInSeconds =
+        (time.millisecondsSinceEpoch / 1000).round().toString();
+    return '$_baseUrl/forecast/$_apiToken/$lat,$lon,$timeInSeconds' +
+        '?exclude=$excludes' +
+        '&lang=$lang' +
+        '&units=$units';
   }
-    
 
   DarkSkyWeatherBase(this._apiToken,
       {this.language = Language.English, this.units = Units.US});
@@ -44,7 +44,8 @@ abstract class DarkSkyWeatherBase {
     var rLanguage = LanguageHelper.get(language);
     var rUnits = getUnitName(units);
 
-    var url = _getTimeMachineForecastUrl(lat, lon, time, rExcludes, rLanguage, rUnits);
+    var url = _getTimeMachineForecastUrl(
+        lat, lon, time, rExcludes, rLanguage, rUnits);
 
     return _getForecastResults(url);
   }
