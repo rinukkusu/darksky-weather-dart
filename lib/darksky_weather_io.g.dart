@@ -22,7 +22,14 @@ Forecast _$ForecastFromJson(Map<String, dynamic> json) {
         : HourlyDataBlock.fromJson(json['hourly'] as Map<String, dynamic>)
     ..daily = json['daily'] == null
         ? null
-        : DailyDataBlock.fromJson(json['daily'] as Map<String, dynamic>);
+        : DailyDataBlock.fromJson(json['daily'] as Map<String, dynamic>)
+    ..alerts = (json['alerts'] as List)
+        ?.map(
+            (e) => e == null ? null : Alert.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..flags = json['flags'] == null
+        ? null
+        : Flags.fromJson(json['flags'] as Map<String, dynamic>);
 }
 
 CurrentlyDataPoint _$CurrentlyDataPointFromJson(Map<String, dynamic> json) {
@@ -152,4 +159,23 @@ DailyDataBlock _$DailyDataBlockFromJson(Map<String, dynamic> json) {
             ? null
             : DailyDataPoint.fromJson(e as Map<String, dynamic>))
         ?.toList();
+}
+
+Alert _$AlertFromJson(Map<String, dynamic> json) {
+  return Alert()
+    ..description = json['description'] as String
+    ..expires = json['expires'] as int
+    ..regions = (json['regions'] as List)?.map((e) => e as String)?.toList()
+    ..severity = json['severity'] as String
+    ..time = json['time'] as int
+    ..title = json['title'] as String
+    ..uri = json['uri'] as String;
+}
+
+Flags _$FlagsFromJson(Map<String, dynamic> json) {
+  return Flags()
+    ..darkskyUnavailable = json['darksky-unavailable']
+    ..nearestStation = (json['nearest-station'] as num)?.toDouble()
+    ..sources = (json['sources'] as List)?.map((e) => e as String)?.toList()
+    ..units = json['units'] as String;
 }

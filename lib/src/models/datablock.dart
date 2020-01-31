@@ -13,7 +13,7 @@ abstract class DataBlockBase {
 
 /// A data block containing the weather conditions minute-by-minute for the next 
 /// hour.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MinutelyDataBlock extends DataBlockBase {
   /// [required] An array of data points, ordered by time, which together 
   /// describe the weather conditions at the requested location over time.
@@ -26,7 +26,7 @@ class MinutelyDataBlock extends DataBlockBase {
 
 /// A data block containing the weather conditions hour-by-hour for the next two 
 /// days.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class HourlyDataBlock extends DataBlockBase {
   /// [required] An array of data points, ordered by time, which together 
   /// describe the weather conditions at the requested location over time.
@@ -38,7 +38,7 @@ class HourlyDataBlock extends DataBlockBase {
 }
 
 /// A data block containing the weather conditions day-by-day for the next week.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class DailyDataBlock extends DataBlockBase {
   /// [required] An array of data points, ordered by time, which together 
   /// describe the weather conditions at the requested location over time.

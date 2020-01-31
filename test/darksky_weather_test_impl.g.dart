@@ -22,7 +22,9 @@ Forecast _$ForecastFromJson(Map<String, dynamic> json) {
         : HourlyDataBlock.fromJson(json['hourly'] as Map<String, dynamic>)
     ..daily = json['daily'] == null
         ? null
-        : DailyDataBlock.fromJson(json['daily'] as Map<String, dynamic>);
+        : DailyDataBlock.fromJson(json['daily'] as Map<String, dynamic>)
+    ..alerts = json['alerts'] as List
+    ..flags = json['flags'];
 }
 
 CurrentlyDataPoint _$CurrentlyDataPointFromJson(Map<String, dynamic> json) {

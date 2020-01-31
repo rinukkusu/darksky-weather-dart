@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 part of darksky_weather;
 
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class Forecast {
   /// [required] The requested latitude.
   double latitude;
@@ -30,6 +30,14 @@ class Forecast {
   /// [optional] A data block containing the weather conditions day-by-day for 
   /// the next week.
   DailyDataBlock daily;
+
+  /// [optional] An alerts array, which, if present, contains any severe weather
+  /// alerts pertinent to the requested location.
+  List<Alert> alerts;
+
+  /// [optional] A flags object containing miscellaneous metadata about the 
+  /// request.
+  Flags flags;
 
   Forecast();
   factory Forecast.fromJson(Map<String, dynamic> json) =>

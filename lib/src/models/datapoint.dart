@@ -77,7 +77,7 @@ abstract class DataPointBase {
 
 /// A data point containing the current weather conditions at the requested 
 /// location.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class CurrentlyDataPoint extends DataPointBase {
   /// [optional] The approximate direction of the nearest storm in degrees, 
   /// with true north at 0° and progressing clockwise. (If nearestStormDistance 
@@ -99,7 +99,7 @@ class CurrentlyDataPoint extends DataPointBase {
 
 /// A data point containing the weather conditions minute-by-minute for the next 
 /// hour.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class MinutelyDataPoint extends DataPointBase {
   /// [optional] The apparent (or “feels like”) temperature in degrees 
   /// Fahrenheit.
@@ -112,7 +112,7 @@ class MinutelyDataPoint extends DataPointBase {
 
 /// A data point containing the weather conditions hour-by-hour for the next two 
 /// days.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class HourlyDataPoint extends DataPointBase {
   /// [optional] The apparent (or “feels like”) temperature in degrees 
   /// Fahrenheit.
@@ -131,7 +131,7 @@ class HourlyDataPoint extends DataPointBase {
 }
 
 /// A data point containing the weather conditions day-by-day for the next week.
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class DailyDataPoint extends DataPointBase {
   /// [optional] The maximum value of apparentTemperature during a given day.
   double apparentTemperatureMax;
