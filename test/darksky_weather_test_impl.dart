@@ -17,6 +17,8 @@ part 'darksky_client_test_impl.dart';
 part '../lib/src/models/forecast.dart';
 part '../lib/src/models/datapoint.dart';
 part '../lib/src/models/datablock.dart';
+part '../lib/src/models/alert.dart';
+part '../lib/src/models/flags.dart';
 part '../lib/src/enums/exclude_flags.dart';
 part '../lib/src/enums/language_enum.dart';
 part '../lib/src/enums/units_enum.dart';
