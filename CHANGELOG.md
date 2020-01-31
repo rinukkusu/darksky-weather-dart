@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- add flags and alerts
+
 ## 1.3.0
 
 - upgrade to json_annotation 3.0.0
