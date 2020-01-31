@@ -1,4 +1,4 @@
-# darksky_weather
+# darksky_weather ![Dart CI](https://github.com/rinukkusu/darksky-weather-dart/workflows/Dart%20CI/badge.svg)
 
 A dart library for interfacing with the Dark Sky Weather API.
 
