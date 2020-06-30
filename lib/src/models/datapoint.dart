@@ -70,7 +70,7 @@ abstract class DataPointBase {
   /// this value will not be defined.)
   double windBearing;
 
-  // [optional] The wind gust speed in miles per hour.
+  /// [optional] The wind gust speed in miles per hour.
   double windGust;
   
   /// [optional] The wind speed in miles per hour.
