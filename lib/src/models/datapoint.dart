@@ -68,9 +68,11 @@ abstract class DataPointBase {
   /// [optional] The direction that the wind is coming from in degrees, with 
   /// true north at 0° and progressing clockwise. (If windSpeed is zero, then 
   /// this value will not be defined.)
-
   double windBearing;
 
+  /// [optional] The wind gust speed in miles per hour.
+  double windGust;
+  
   /// [optional] The wind speed in miles per hour.
   double windSpeed;
 }
@@ -189,6 +191,9 @@ class DailyDataPoint extends DataPointBase {
 
   /// [optional] The UNIX time of when temperatureMin occurs during a given day.
   int temperatureMinTime;
+  
+  /// [optional] The time at which the maximum wind gust speed occurs during the day.
+  int windGustTime;
 
   DailyDataPoint();
   factory DailyDataPoint.fromJson(Map<String, dynamic> json) =>
