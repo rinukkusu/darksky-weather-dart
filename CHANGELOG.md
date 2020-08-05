@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+
+- add windGust and windGustTime
+
 ## 1.4.0
 
 - add flags and alerts
