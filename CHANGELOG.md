@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1+1
+
+- regenerate serialization code files
+
 ## 1.4.1
 
 - add windGust and windGustTime
