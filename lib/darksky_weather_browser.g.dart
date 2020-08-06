@@ -47,6 +47,7 @@ CurrentlyDataPoint _$CurrentlyDataPointFromJson(Map<String, dynamic> json) {
     ..time = json['time'] as int
     ..visibility = (json['visibility'] as num)?.toDouble()
     ..windBearing = (json['windBearing'] as num)?.toDouble()
+    ..windGust = (json['windGust'] as num)?.toDouble()
     ..windSpeed = (json['windSpeed'] as num)?.toDouble()
     ..nearestStormBearing = (json['nearestStormBearing'] as num)?.toDouble()
     ..nearestStormDistance = (json['nearestStormDistance'] as num)?.toDouble()
@@ -68,6 +69,7 @@ MinutelyDataPoint _$MinutelyDataPointFromJson(Map<String, dynamic> json) {
     ..time = json['time'] as int
     ..visibility = (json['visibility'] as num)?.toDouble()
     ..windBearing = (json['windBearing'] as num)?.toDouble()
+    ..windGust = (json['windGust'] as num)?.toDouble()
     ..windSpeed = (json['windSpeed'] as num)?.toDouble()
     ..apparentTemperature = (json['apparentTemperature'] as num)?.toDouble();
 }
@@ -87,6 +89,7 @@ HourlyDataPoint _$HourlyDataPointFromJson(Map<String, dynamic> json) {
     ..time = json['time'] as int
     ..visibility = (json['visibility'] as num)?.toDouble()
     ..windBearing = (json['windBearing'] as num)?.toDouble()
+    ..windGust = (json['windGust'] as num)?.toDouble()
     ..windSpeed = (json['windSpeed'] as num)?.toDouble()
     ..apparentTemperature = (json['apparentTemperature'] as num)?.toDouble()
     ..precipAccumulation = (json['precipAccumulation'] as num)?.toDouble()
@@ -108,6 +111,7 @@ DailyDataPoint _$DailyDataPointFromJson(Map<String, dynamic> json) {
     ..time = json['time'] as int
     ..visibility = (json['visibility'] as num)?.toDouble()
     ..windBearing = (json['windBearing'] as num)?.toDouble()
+    ..windGust = (json['windGust'] as num)?.toDouble()
     ..windSpeed = (json['windSpeed'] as num)?.toDouble()
     ..apparentTemperatureMax =
         (json['apparentTemperatureMax'] as num)?.toDouble()
@@ -125,7 +129,8 @@ DailyDataPoint _$DailyDataPointFromJson(Map<String, dynamic> json) {
     ..temperatureMax = (json['temperatureMax'] as num)?.toDouble()
     ..temperatureMaxTime = json['temperatureMaxTime'] as int
     ..temperatureMin = (json['temperatureMin'] as num)?.toDouble()
-    ..temperatureMinTime = json['temperatureMinTime'] as int;
+    ..temperatureMinTime = json['temperatureMinTime'] as int
+    ..windGustTime = json['windGustTime'] as int;
 }
 
 MinutelyDataBlock _$MinutelyDataBlockFromJson(Map<String, dynamic> json) {
