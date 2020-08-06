@@ -24,12 +24,11 @@ Future<Null> main() async {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/rinukkusu/darksky-weather-dart/issues
-
 ## Development
 
 ### Generating JSON Serializers
 Run `pub run build_runner build` to generate JSON serializers via [json_serializable][].
+
 Run `pub run build_runner watch` to continuously rebuild serializers in the background when files are updated.
 
 ### Running tests
@@ -37,3 +36,7 @@ Run `pub run test` to run all of the tests in `test/darksky_weather_test.dart`.
 
 ### Running example code
 Run `pub run example/example` to run the example code. You'll need to modify `example/example.dart` to use your Dark Sky ApiKey.
+
+
+[tracker]: https://github.com/rinukkusu/darksky-weather-dart/issues
+[json_serializable]: https://pub.dartlang.org/packages/json_serializable
