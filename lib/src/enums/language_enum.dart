@@ -41,7 +41,7 @@ enum Language {
 }
 
 class LanguageHelper {
-  static String get(Language l) => _languages[l];
+  static String get(Language l) => _languages[l]!;
 
   static const Map<Language, String> _languages = const {
     Language.Arabic: 'ar',

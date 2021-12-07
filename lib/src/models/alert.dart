@@ -5,14 +5,14 @@ part of darksky_weather;
 @JsonSerializable(createToJson: false)
 class Alert {
   /// [required] A detailed description of the alert.
-  String description;
+  String? description;
 
   /// [required] The UNIX time at which the alert will expire.
-  int expires;
+  int? expires;
 
   /// [required] An array of strings representing the names of the regions 
   /// covered by this weather alert.
-  List<String> regions;
+  List<String>? regions;
 
   /// [required] The severity of the weather alert. 
   /// Will take one of the following values: 
@@ -21,17 +21,17 @@ class Alert {
   ///   "watch" (an individual should prepare for potentially severe weather)
   ///   "warning" (an individual should take immediate action to protect 
   ///              themselves and others from potentially severe weather).
-  String severity;
+  String? severity;
 
   /// [required] The UNIX time at which the alert was issued.
-  int time;
+  int? time;
   
   /// [required] A brief description of the alert.
-  String title;
+  String? title;
 
   /// [required] An HTTP(S) URI that one may refer to for detailed information
   /// about the alert.
-  String uri;
+  String? uri;
 
   Alert();
   factory Alert.fromJson(Map<String, dynamic> json) =>

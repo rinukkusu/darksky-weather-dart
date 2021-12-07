@@ -16,15 +16,15 @@ class Flags {
   /// property's value is in miles (if US units are selected) or kilometers 
   /// (if SI units are selected).
   @JsonKey(name: 'nearest-station')
-  double nearestStation;
+  double? nearestStation;
 
   /// [required] This property contains an array of IDs for each data source 
   /// utilized in servicing this request.
-  List<String> sources;
+  List<String>? sources;
 
   /// [required] Indicates the units which were used for the data in this 
   /// request.
-  String units;
+  String? units;
 
   Flags();
   factory Flags.fromJson(Map<String, dynamic> json) =>

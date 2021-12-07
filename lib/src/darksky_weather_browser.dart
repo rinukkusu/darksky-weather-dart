@@ -10,7 +10,7 @@ class DarkSkyWeather extends DarkSkyWeatherBase {
   @override
   Future<List<int>> _getImpl(String url) async {
     var client = new http.BrowserClient();
-    var response = await client.get(url);
+    var response = await client.get(Uri.parse(url));
     return response.bodyBytes;
   }
 }
