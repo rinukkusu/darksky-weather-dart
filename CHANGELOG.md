@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+- migrate to null-safety
+
 ## 1.4.1+1
 
 - regenerate serialization code files

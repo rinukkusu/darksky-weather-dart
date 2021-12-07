@@ -4,11 +4,11 @@ part of darksky_weather;
 
 abstract class DataBlockBase {
   /// [optional] A human-readable summary of this data block.
-  String summary;
+  String? summary;
 
   /// [optional] A machine-readable text summary of this data block. (May take 
   /// on the same values as the icon property of data points.)
-  String icon;
+  String? icon;
 }
 
 /// A data block containing the weather conditions minute-by-minute for the next 
@@ -17,7 +17,7 @@ abstract class DataBlockBase {
 class MinutelyDataBlock extends DataBlockBase {
   /// [required] An array of data points, ordered by time, which together 
   /// describe the weather conditions at the requested location over time.
-  List<MinutelyDataPoint> data;
+  List<MinutelyDataPoint>? data;
 
   MinutelyDataBlock();
   factory MinutelyDataBlock.fromJson(Map<String, dynamic> json) =>
@@ -30,7 +30,7 @@ class MinutelyDataBlock extends DataBlockBase {
 class HourlyDataBlock extends DataBlockBase {
   /// [required] An array of data points, ordered by time, which together 
   /// describe the weather conditions at the requested location over time.
-  List<HourlyDataPoint> data;
+  List<HourlyDataPoint>? data;
 
   HourlyDataBlock();
   factory HourlyDataBlock.fromJson(Map<String, dynamic> json) =>
@@ -42,7 +42,7 @@ class HourlyDataBlock extends DataBlockBase {
 class DailyDataBlock extends DataBlockBase {
   /// [required] An array of data points, ordered by time, which together 
   /// describe the weather conditions at the requested location over time.
-  List<DailyDataPoint> data;
+  List<DailyDataPoint>? data;
 
   DailyDataBlock();
   factory DailyDataBlock.fromJson(Map<String, dynamic> json) =>

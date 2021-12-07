@@ -7,7 +7,7 @@ import 'darksky_weather_test_impl.dart';
 
 void main() {
   group('A group of tests', () {
-    DarkSkyWeatherTest darkskyApi;
+    late DarkSkyWeatherTest darkskyApi;
 
     setUp(() {
       darkskyApi = new DarkSkyWeatherTest();
